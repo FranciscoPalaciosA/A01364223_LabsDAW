@@ -8,7 +8,7 @@
 
     <meta name="description" content="Primer Cuestionario Bases se Datos"/>
     
-    <link rel="stylesheet" type="text/css" href="css_Lab01.css">
+    <link rel="stylesheet" type="text/css" href="../Lab01/css_Lab01.css">
     
     <title> Cuestionario 1: BD vs DBMS </title>
 
@@ -29,15 +29,83 @@
                 
                 <article>
                 
-                    <h3>¿Qué es entonces una base de datos - DB?</h3>
+                    <h3 id = "1">¿Qué es entonces una base de datos - DB?</h3>
+                    
+                    <p>
+                        Una base de datos son muchos archivos que se relacionan entre ellos. Al momento de diseñar una debemos de ser cuidadosos en no duplicar datos. <br> Se podría decir que una base de datos es un sistema de archivos con directorio(s) que almacenan los archivos relacionados. <br> Sin embargo la diferencia entre ese sitema y una base de datos yace en el administrador de Base de Datos.
+                    </p>
                     
                     <h3>¿En qué casos es conveniente usar bases de datos?</h3>
                     
+                    <p>
+                        Siempre que haya información en donde se relacionen diferentes archivos y que esa información quiera ser leída por varios usuarios o aplicaciones.
+                    </p>
+                    
                     <h3>¿Qué es un sistema de gestión de base de datos - DBMS?</h3>
                     
-                    <h3>Enlista y explica las funciones/responsabilidades que tienen los DBMS.</h3>
+                    <p>
+                        DBMS por sus siglas en inglés Database Management System, es aquél sistema formado por una colección de datos interrelacionados y varios programas para tener acceso a estos datos. Tiene como objetivo ser un ambiente conveniente y eficiente para poder extraer y guardar información (datos) a la base de datos. 
+                    </p>
+                    
+                    <h3 id="2">Enlista y explica las funciones/responsabilidades que tienen los DBMS.</h3>
+                    
+                    <ul>
+                        <li>
+                             Independencia lógica y física de los datos
+                            <ul>
+                                <li>
+                                    Poder hacer una modificación sin romper la estructura de la base.
+                                </li>
+                            </ul>
+                        </li>
+                         <li>
+                             Redundancia mínima
+                            <ul>
+                                <li>
+                                    Evitar repeticiones innecesarias.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                             Acceso concurrente por parte de múltiples usuarios
+                            <ul>
+                                <li>
+                                    Deben de poder atender a varios usuarios y aplicaciones al mismmo tiempo sin problema.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                             Distribución espacial de los datos
+                            <ul>
+                                <li>
+                                    No es importante para el usuario en dónde se encuentren alojados los datos.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                             Integridad de los datos
+                            <ul>
+                                <li>
+                                    Proteger la introducción de datos erróneos a la base de datos, tanto por errores físicos o de operación.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                             Resplado y recuperación
+                            <ul>
+                                <li>
+                                    Se refiere a la capacidad de un sistema de base de datos de recuperar su estado en un momento previo a la pérdida de datos.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                     
                     <h3>Ejemplifica y justifica en que proyecto de los que has realizado hubiera sido conveniente utilizar una base de datos.</h3>
+                    
+                    <p>
+                        En un trabajo con mi tía, pues tiene un archivo de clientes con mas de 200 registros y con atributos para cada cliente como nombre, fecha de nacimiento, etc... <br>
+                        De haber sabido antes cómo hacer esto, le hubiera implementado un administrados de base de datos desde hace tiempo. 
+                    </p>
                 
                 </article>
                 
@@ -49,6 +117,12 @@
                 <article>
                     <strong> <a href="#1">[1]</a> </strong>
                     Korth Henry, Silverschatz. Fundamentos de bases de datos, Capitulo 1. <br>
+                    <strong><a href="#2">[2]</a></strong>
+				    "Objetivos de una Base de Datos" Internet:
+					<a href="https://tombasededatos.wordpress.com/2010/08/21/1-2-objetivos-de-una-base-de-datos/">
+						https://tombasededatos.wordpress.com/2010/08/21/1-2-objetivos-de-una-base-de-datos/
+					</a>
+					, 21/08/2010 [Enero 17, 2018].<br>
                 </article>
                 
             </section>
