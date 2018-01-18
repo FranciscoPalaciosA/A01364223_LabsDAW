@@ -1,0 +1,607 @@
+<!DOCTYPE HTML>
+
+<!-- Preguntar:
+	R 1. Citas adecuadas? o cómo citar
+	R 2. No importa si no hay nada de diseño?
+	R 3. Qué formulario/encuesta al principio de la actividad?
+	R 4. Forma es cuestionario?
+	5. Método GET para enviar usuario y contraseña?
+-->
+
+<html lang="es-mx">
+
+<head>
+
+<meta charset="utf-8"/>
+
+<meta name="description" content="Primer Laboratorio de DAW"/>
+    
+<link rel="stylesheet" type="text/css" href="css_Lab01.css">
+
+<title> Laboratorio 01 DAW </title>
+
+</head>
+
+<body>
+
+<div id="contenedor">
+
+	<header>
+		<h1>Laboratorio 01 DAW </h1>
+	</header>
+
+	<main id="contenido">
+
+		<section>
+			<h2>Descripción de Tecnologías</h2>
+			<article>
+
+				<h3 id="1">URL</h3>
+				<p>
+					URL significa "Uniform Resource Locator", o bien, "Localizador Uniforme de Recursos".<br>
+					En pocas palabras, se trata de una serie de caracteres que responden a un formato estándar y que permiten<br>
+					clasificar recursos subidos a Internet para su descarga y utilización. [1]
+				</p>
+
+				<h3 id="2">MIME</h3>
+				<p>
+					(Multipurpouse Internet Mail Extensions - Extensiones de Correo Internet Multipropósito).<br>
+					 Serie de especificaciones dirigidas al intercambio transparente de todo tipo de archivos a través<br>
+					 de Internet. [2]
+				</p>
+
+				<h3 id="3">Métodos y códigos de errores HTTP</h3>
+				<p>
+					<strong>Métodos:</strong> HTTP define un conjunto de métodos de petición para indicar la acción que se desea <br>
+					realizar para un recurso determinado. [3]<br>
+					<strong>Códigos de errores:</strong> Los códigos de estado de respuesta HTTP indican si se ha completado <br>
+					satisfactoriamente una solicitud HTTP específica. Las respuestas se agrupan en cinco clases: <br>
+					respuestas informativas, respuestas satisfactorias, redirecciones, errores de los clientes y <br>
+					errores de los servidores. [3]
+				</p>
+
+				<h3 id="4">XML</h3>
+				<p>
+					XML proviene de eXtensible Markup Language (“Lenguaje de Marcas Extensible”). Se trata de un metalenguaje<br>
+					(un lenguaje que se utiliza para decir algo acerca de otro) extensible de etiquetas que fue desarrollado<br>
+					por el Word Wide Web Consortium (W3C), una sociedad mercantil internacional que elabora recomendaciones<br>
+					para la World Wide Web. [4]
+				</p>
+
+				<h3 id="5">XHTML</h3>
+				<p>
+					XHTML (Lenguaje de Marcado de Hipertexto Extensible) es una versión más estricta y limpia de HTML,<br>
+					que nace precisamente con el objetivo de remplazar a HTML ante su limitación de uso con las cada vez<br>
+					más abundantes herramientas basadas en XML . XHTML extiende HTML 4.0 combinando la sintaxis de HTML,<br>
+					diseñado para mostrar datos, con la de XML, diseñado para describir los datos. [5]
+				</p>
+
+				<h3 id="6">HTML5</h3>
+				<p>
+					HTML5 es un lenguaje markup (de hecho, las siglas de HTML significan Hyper Text Markup Language) usado para<br>
+					estructurar y presentar el contenido para la web. [6]
+				</p>
+
+				<h3 id="7">JavaScript</h3>
+				<p>
+					Al igual que HTML, Javascript es un lenguaje de programación que se puede utilizar para construir sitios Web <br>
+					y para hacerlos más interactivos. [7]
+				</p>
+
+				<h3 id="8">PHP</h3>
+				<p>
+					PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente<br>
+					adecuado para el desarrollo web y que puede ser incrustado en HTML. [8]
+				</p>
+
+				<h3 id="9">jsp</h3>
+				<p>
+					JSP es un acrónimo de Java Server Pages, que en castellano vendría a decir algo como Páginas de Servidor Java. <br>
+					Es una tecnología orientada a crear páginas web con programación en Java. [9]
+				</p>
+
+				<h3 id="10">Ajax</h3>
+				<p>
+					AJAX es el acrónimo de Asynchronous Javascript and XML, es decir: Javascript y XML Asincrono. AJAX se define<br>
+ 					como una técnica para el desarrollo de páginas (sitios) web que implementan aplicaciones interactivas. [10]
+				</p>
+
+			</article>
+		</section>
+
+		<section>
+			<h2> Preguntas a responder </h2>
+
+			<article>
+
+				<h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+				<p>
+					El Internet es una red mundial de comunicación entre millones de dispoitivos que permite intercambiar datos.<br>
+					La Web es un medio de comunicación a través de Internet se puede decir que  es un sistema de hipertexto que<br>
+					utiliza Internet como su mecanismo de transporte o desde otro punto de vista, una forma gráfica de explorar Internet.
+				</p>
+
+					<h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                
+					<ul class = "metodos">
+						<li>
+							GET
+							<ul>
+								<li>
+									El método GET  solicita una representación de un recurso específico.<br>
+									Las peticiones que usan el método GET sólo deben recuperar datos. [3]
+								</li>
+							</ul>
+						</li>
+						<li>
+							HEAD
+							<ul>
+								<li>
+									El método HEAD pide una respuesta idéntica a la de una petición GET,<br>
+									pero sin el cuerpo de la respuesta. [3]
+								</li>
+							</ul>
+						</li>
+						<li>
+							POST
+							<ul>
+								<li>
+								El método POST se utiliza para enviar una entidad a un recurso en específico,<br>
+								 causando a menudo un cambio en el estado o efectos secundarios en el servidor. [3]
+							 </li>
+							</ul>
+						</li>
+						<li>
+							PUT
+							<ul>
+								<li>
+									El modo PUT reemplaza todas las representaciones actuales del recurso de<br>
+									destino con la carga útil de la petición. [3]
+								</li>
+							</ul>
+						</li>
+						<li>
+							PATCH
+							<ul>
+								<li>
+									El método PATCH  es utilizado para aplicar modificaciones parciales a un recurso. [3]
+							 	</li>
+							</ul>
+						</li>
+						<li>
+							DELETE
+							<ul>
+								<li>
+									El método DELETE borra un recurso en específico. [3]
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+						<h3>
+							¿Qué método HTTP se debe utilizar al enviar un formulario HTML, <br>
+							por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
+						</h3>
+						<p>
+							¿GET?
+						</p>
+
+						<h3>
+							¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+						</h3>
+						<p>
+							Se usa el método GET pues estás haciendo un llamado para recibir un recurso, en este caso<br>
+							la página del servidor.
+						</p>
+
+						<h3>
+							Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
+						</h3>
+						<p>
+							No hubo ningún error, el código 200 alude a 'OK', y puede venir o no, acompañado de una respuesta <br>
+							dependiendo del método utilizado para hacer el llamado.
+						</p>
+
+						<h3>
+							¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder<br>
+							al sitio y se encontró con un error 404? ¿Por qué?
+						</h3>
+						<p>
+							Es responsabilidad del desarrollador siempre y cuándo el URL del sitio web esté bien escrito por el cliente<br>
+							pues esto quiere decir que el sitio web ya no se encuentra en donde debería encontrarse.
+						</p>
+
+						<h3>
+							¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder<br>
+							al sitio y se encontró con un error 500? ¿Por qué?
+						</h3>
+						<p>
+							Sí es responsabilidad pues se refiere a algún error que se cometió al momento de programar,<br>
+							ya sea un error de compatibilidad en el lenguaje o una programación PHP incorrecta.
+						</p>
+
+						<h3>
+							¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? <br>
+							Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+						</h3>
+						<p>
+							Estos son atributos que fueron reemplazados y mejorados con otros atributos. Algunos ejemplos de<br>
+							atributos depreciados en HTML5 son:
+						</p>
+						<ul>
+							<li>&lt;applet&gt;</li>
+							<li>&lt;basefont&gt;</li>
+							<li>&lt;center&gt;</li>
+						</ul>
+
+						<h3 id="11">
+							¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+						</h3>
+						<ul>
+							<li>
+								HTML5 define una sintaxis que es compatible con HTML4 y XHTML 1.0. Por tanto, un<br>
+								salto de línea se puede escribir como &lt;br&gt; (HTML4) o &lt;br /&gt; (XHTML 1.0).
+							</li>
+							<li>
+								Se simplifica el DOCTYPE:
+								&lt;!DOCTYPE html&gt;
+							</li>
+							<li>
+								HTML5 permite incluir elementos de SVG y MathML.
+							</li>
+							<li>
+								Se introducen nuevos elementos, como: section, article, aside, header, footer, etc.
+							</li>
+							<li>
+								Se introducen nuevos atributos, como: media, charset, autofocus, placeholder, etc.
+							</li>
+							<li>
+								Algunos elementos cambian, como: a, b, i, menu, etc.
+							</li>
+							<li>
+								Algunos atributos cambian, como: type, name, summary, etc.
+							</li>
+							<li>
+								Algunos elementos desaparecen, como: basefont, big, center, etc.
+							</li>
+							<li>
+								Algunos atributos desaparecen, como: align, background, bgcolor, etc.
+							</li>
+							<li>
+								Mejora de las API, como: getElementsByClassName() y innerHTML.
+							</li>
+						</ul> [11]
+
+						<h3>
+							¿Qué componentes de estructura y estilo tiene una tabla?
+						</h3>
+						<h4>Estructura</h4>
+						<p>
+							Las tablas cuentan con un 'Caption' que es el título de la tabla. Lleva un 'header' como thead,<br>
+							un 'footer' como tfoot y un 'body' como tbody. Cada fila se codifíca como tr y cada celda de esa <br>
+							fila como td.
+						</p>
+						<h4>Estilo</h4>
+						<p>
+							Las tablas pueden ser modificadas con una altura y un ancho. Así mismo puedes cambiar el color<br>
+							y grosor del borde de las líneas que la conforman.
+						</p>
+
+						<h3 id="12">
+							¿Cuáles son los principales controles de una forma HTML5?
+						</h3>
+						<p>
+							Los principales métodos de una forma son: [12]
+						</p>
+							<ul>
+								<li>
+									&lt;input&gt;
+									<ul>
+										<li>Señala un campo en el que el usuario puede introducir datos</li>
+									</ul>
+								</li>
+								<li>
+									&lt;textarea&gt;
+									<ul>
+										<li>Define un area de varias lineas para que el usuario introduzca datos</li>
+									</ul>
+								</li>
+								<li>
+									&lt;button&gt;
+									<ul>
+										<li>Sirve para hacer un botón oprimible</li>
+									</ul>
+								</li>
+								<li>
+									&lt;select&gt;
+									<ul>
+										<li>Se usa para hacer una lista desplegable</li>
+									</ul>
+								</li>
+								<li>
+									&lt;option&gt;
+									<ul>
+										<li>Es una opción de la lista despegable</li>
+									</ul>
+								</li>
+								<li>
+									&lt;optgroup&gt;
+									<ul>
+										<li>Te permite agrupar varias opciones de las listas despegables</li>
+									</ul>
+								</li>
+								<li>
+									&lt;fieldset&gt;
+									<ul>
+										<li>Con este elemento puedes agrupar diferentes elementos del formulario</li>
+									</ul>
+								</li>
+								<li>
+									&lt;label&gt;
+									<ul>
+										<li>Se encarga de definir texto para uno campo en el que se pueden introducir datos</li>
+									</ul>
+								</li>
+							</ul>
+
+						<h3>
+							¿Qué tanto soporte HTML5 tiene el navegador que utilizas?
+						</h3>
+						<p>
+							Según la página que recomiendan, el navegador Google Chrome que es el que uso, tiene 520 puntos de 555.<br>
+							Siendo la pero categoria 'Security' pues tengo solo 23 de 32 puntos, en la mayoría de las otras tengo todos<br>
+							o casi todos de los puntos posibles. Supongo que es un alto nivel de soporte para HTML5
+						</p>
+
+			</article>
+		</section>
+        
+        <section>
+            
+            <h2 id = "13">Investigación 1: Bases de Datos</h2> [13]
+            
+            <article>
+                
+                <h3>Ciclos de Vida de desarrollo de los sitemas de información</h3>
+                
+                <img src="Ciclo_Vida.jpg" alt="ciclo de vida">
+                
+                <h3>Ciclos de desarrollo de los sistemas de información</h3>
+                
+                <ul>
+				    <li>
+				        Planificación
+				        <ul>
+				            <li>
+				                Realizar una serie de tareas previas que influirán decisivamente en la finalización con éxito del proyecto.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Análisis
+				        <ul>
+				            <li>
+				                Averiguar qué es exactamente lo que tiene que hacer el sistema. La etapa de análisis en el ciclo de vida <br>del software corresponde al proceso mediante el cual se intenta descubrir qué es lo que realmente<br> se necesita y se llega a una comprensión adecuada de los requerimientos del sistema.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Diseño
+				        <ul>
+				            <li>
+				                Se han de estudiar posibles alternativas de implementación para el sistema de información que hemos de construir<br> y se ha de decidir la estructura general que tendrá el sistema (su diseño arquitectónico). El diseño de un<br> sistema es complejo y el proceso de diseño ha de realizarse de forma iterativa.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Implementación
+				        <ul>
+				            <li>
+				                Seleccionar las herramientas adecuadas, un entorno de desarrollo que facilite nuestro trabajo y un lenguaje de programación<br> apropiado para el tipo de sistema que vayamos a construir. La elección de estas herramientas dependerá<br> en gran parte de las decisiones de diseño que hayamos tomado hasta el momento y del entorno en el que nuestro<br> sistema deberá funcionar.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Pruebas
+				        <ul>
+				            <li>
+				                Tiene como objetivo detectar los errores que se hayan podido cometer en las etapas anteriores del proyecto (y, eventualmente,<br> corregirlos). La búsqueda de errores que se realiza en la etapa de pruebas puede adaptar distintas formas,<br> en función del contexto y de la fase del proyecto.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Instalación o despliegue
+				        <ul>
+				            <li>
+				                Debemos de planificar el entorno en el que el sistema debe funcionar, tanto hardware como software: equipos necesarios<br> y su configuración física, redes de interconexión entre los equipos y de acceso a sistemas externos,<br> sistemas operativos y bibliotecas.<br>
+                                Estas etapas son un reflejo del proceso que se sigue a la hora de resolver cualquier tipo de problema.
+				            </li>
+				        </ul>
+				    </li>
+                    <li>
+				        Uso y mantenimiento 
+				        <ul>
+				            <li>
+				                La etapa de mantenimiento consume típicamente del 40 al 80 por ciento de los recursos de una empresa de desarrollo<br> de software. De hecho, con un 60% de media, es probablemente la etapa más importante del ciclo de vida del software.
+                                <ul>
+                                    <li>
+                                        Eliminar los defectos que se detecten durante su vida útil, lo primero que a uno se le viene a la cabeza<br> cuando piensa en el mantenimiento de cualquier cosa.
+                                    </li>
+                                    <li>
+                                        Adaptarlo a nuevas necesidades cuando el sistema ha de funcionar sobre una nueva versión del sistema<br> operativo o en un entorno hardware diferente.
+                                    </li>
+                                    <li>
+                                        Añadirle nueva funcionalidad, cuando se proponen características deseables que supondrían<br> una mejora del sistema ya existente.
+                                    </li>
+                                </ul>
+				            </li>
+				        </ul>
+				    </li>
+                </ul>
+                
+            </article>
+            
+        </section>
+        
+        <section>
+
+			<article>
+				<h2>Introduce tus datos</h2>
+				<form>
+
+					<p>
+						<label>Nombre:
+							<input type="text">
+						</label>
+					</p>
+
+					<p>
+							<label>Edad:
+									<input type="number" min = "2" max="99" step="1" value="20"/>
+							</label>
+					</p>
+
+					<p>
+						<label>Escoge tu color favorito:
+							<input type="color" autofocus />
+						</label>
+					</p>
+
+					<p>
+						<label>Correo electrónico:
+							<input type="email" placeholder="nombre@dominio.com" required/>
+						</label>
+					</p>
+
+					<p>
+						<input type="submit" value="Enviar" />
+						<input type="reset" value="Borrar" />
+					</p>
+
+				</form>
+			</article>
+
+		</section>
+        
+		<section>
+			<h2>Referencias</h2>
+
+			<article>
+
+				<h3></h3>
+
+					<strong> <a href="#1">[1]</a> </strong>
+					Victoria Bembibre. "URL." Internet:
+					<a href="https://www.definicionabc.com/tecnologia/url.php/">
+						https://www.definicionabc.com/tecnologia/url.php/
+					</a>
+					, 09/01/2009 [Enero 11, 2018]. <br>
+
+					<strong><a href="#2">[2]</a></strong>
+					Leandro Alegsa. "Definición de MIME." Internet:
+					<a href="http://www.alegsa.com.ar/Dic/mime.php">
+						http://www.alegsa.com.ar/Dic/mime.php
+					</a>
+					, 24/11/2010 [Enero 11, 2018].<br>
+
+					<strong><a href="#3">[3]</a></strong>
+					Julián Soto. "Métodos de petición HTTP." Internet:
+					<a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">
+						https://developer.mozilla.org/es/docs/Web/HTTP/Methods
+					</a>
+					, 01/11/2017 [Enero 11, 2018].<br>
+
+					<strong><a href="#4">[4]</a></strong>
+					Julián Pérez Porto, Ana Gardey. "Definición de XML" Internet:
+					<a href="https://definicion.de/xml/">
+						https://definicion.de/xml/
+					</a>
+					, 2013 [Enero 11, 2018].<br>
+
+					<strong><a href="#5">[5]</a></strong>
+					"Guía breve de XHTML" Internet:
+					<a href="https://www.w3c.es/Divulgacion/GuiasBreves/XHTML">
+						https://www.w3c.es/Divulgacion/GuiasBreves/XHTML
+					</a>
+					, [Enero 11, 2018].<br>
+
+					<strong><a href="#6">[6]</a></strong>
+					barbarapvn. "Entendiendo HTML5: guía para principiantes" Internet:
+					<a href="https://hipertextual.com/archivo/2013/05/entendiendo-html5-guia-para-principiantes/">
+						https://hipertextual.com/archivo/2013/05/entendiendo-html5-guia-para-principiantes/
+					</a>
+					,28/05/13 [Enero 11, 2018].<br>
+
+					<strong><a href="#7">[7]</a></strong>
+					"¿Qué es JavaScript? - Definición de Javascript" Internet:
+					<a href="http://www.masadelante.com/faqs/javascript">
+						http://www.masadelante.com/faqs/javascript
+					</a>
+					,[Enero 11, 2018].<br>
+
+					<strong><a href="#8">[8]</a></strong>
+					"¿Qué es PHP?" Internet:
+					<a href="http://php.net/manual/es/intro-whatis.php">
+						http://php.net/manual/es/intro-whatis.php
+					</a>
+					,[Enero 11, 2018].<br>
+
+					<strong><a href="#9">[9]</a></strong>
+					Miguel Angel Alvarez. "Qué es JSP" Internet:
+					<a href="https://desarrolloweb.com/articulos/831.php">
+						https://desarrolloweb.com/articulos/831.php
+					</a>
+					,08/07/2002 [Enero 11, 2018].<br>
+
+					<strong><a href="#10">[10]</a></strong>
+					"¿Qué es AJAX?P" Internet:
+					<a href="http://www.digitallearning.es/blog/que-es-ajax/">
+						http://www.digitallearning.es/blog/que-es-ajax/
+					</a>
+					,27/03/2012 [Enero 11, 2018].<br>
+
+					<strong><a href="#11">[11]</a></strong>
+					Sergio Luján Mora. "¿Cuáles son las diferencias entre HTML4 (XHTML 1.0) y HTML5?" Internet:
+					<a href="https://blogs.ua.es/pi/2011/01/17/%C2%BFcuales-son-las-diferencias-entre-html4-xhtml-1-0-y-html5/">
+						https://blogs.ua.es/pi/2011/01/17/%C2%BFcuales-son-las-diferencias-entre-html4-xhtml-1-0-y-html5/
+					</a>
+					,17/01/2011 [Enero 11, 2018].<br>
+
+					<strong><a href="#12">[12]</a></strong>
+					"HTML &lt;form&gt; Tag" Internet:
+					<a href="https://www.w3schools.com/tags/tag_form.asp">
+						https://www.w3schools.com/tags/tag_form.asp
+					</a>
+					,17/01/2011 [Enero 11, 2018].<br>
+                
+                    <strong><a href="#13">[13]</a></strong>
+					Alejandro Cervantes Guerrero. "Ciclo de vida de un sistema de información" Internet:
+					<a href="https://www.w3schools.com/tags/tag_form.asp">
+						https://www.w3schools.com/tags/tag_form.asp
+					</a>
+					, [Enero 14, 2018].<br>
+
+			</article>
+
+		</section>
+    
+		<br>
+		<br>
+		<hr>
+
+	</main>
+
+	<footer>
+		<strong>Francisco Palacios Arriaga</strong><br>
+		A01364223
+		<a href="mailto:A01364223@itesm.mx">
+			<address>A01364223@itesm.mx</address>
+		</a>
+		Editor Utilizado: Atom <br>
+		<a href="https://atom.io/"> Página de Atom</a>
+	</footer>
+</div>
+
+</body>
+
+</html>
