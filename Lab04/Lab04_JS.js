@@ -141,7 +141,7 @@ function numerosPrimos()
 }
 
 
-//Prueba
+//Pruebas
 
 
 
