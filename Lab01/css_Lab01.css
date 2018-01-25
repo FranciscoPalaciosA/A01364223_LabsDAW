@@ -53,8 +53,29 @@ ul.metodos{
     list-style-type: armenian;
 }
 
+table.productos{
+    border: 1px solid black;
+}
+
 table, th, td{
     border-collapse: collapse;
     border: 2px solid white;
     text-align: center;
+    
 }
+
+#contra{
+    margin: 10px;
+    text-align: center;
+}
+
+#info{
+    width: 20px;
+    height: 20px;
+}
+
+.tablaProductos{
+    
+    margin-left: 50%;
+}
+
