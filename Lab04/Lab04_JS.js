@@ -142,14 +142,3 @@ function numerosPrimos()
 
 
 //Pruebas
-
-
-
-
-
-
-
-
-
-
-

@@ -152,6 +152,13 @@ function calcularHipotenusa(catAd, catOp)
     return res;
 }
 
+var myVar = setInterval(function(){ reloj() }, 1000);
+
+function reloj() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("reloj").innerHTML = t;
+}
 
 document.getElementById("hipotenusa").onsubmit = function() {
     var catAd = document.hipo.catAd.value;    
@@ -168,9 +175,18 @@ crearOpt("cantidad",10,0);
 crearOpt("cantidad",4,1);
 crearOpt("cantidad",20,2);
 
+function changeColor()
+{
+    document.getElementById("header").style.color = "red";
+    
+}
+document.getElementById("header").addEventListener("mouseover", changeColor);
 
-
-
+function openWin() {
+    var myWindow = window.open("", "myWindow", "width=200, height=100");
+    myWindow.document.write("<p>This is 'myWindow'</p>");
+    setTimeout(function(){ myWindow.close() }, 3000);
+}
 
 
 
