@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+
+<html lang="es-mx">
+
+<head>
+
+<meta charset="utf-8"/>
+
+<meta name="description" content="Primer Laboratorio de DAW"/>
+ 
+<link rel="stylesheet" type="text/css" href="../Lab01/css_Lab01.css">
+
+
+<title> Laboratorio 05 DAW </title>
+
+</head>
+
+<body>
+    
+    <div id = "wrapper">
+     
+        <header>
+		  <h1>Laboratorio 05 DAW </h1>
+	    </header>
+    
+        <main id = "contenido">
+            
+            <section>
+                
+                <h2>Verificar Password</h2>
+                
+                <article id = "contra">
+                    
+                    <form onsubmit= "return checarForm(this);">
+                        
+                        <p>Contraseña:</p>
+				        <input type="password" placeholder="Contraseña" name = "contra1" required/>
+                        
+                        <p>Verifica tu contraseña: </p>
+                        <input type="password" placeholder="Verifica tu contraseña" name = "contra2" required/>
+                        
+                        <br><br>
+                        
+                        <input type="submit" value="Submit">
+                        
+                        <img id = "info" src= "questionmark.png" onmouseover="">
+                        
+                        <div id = "popup" style = "display: none"> 
+                            
+                            <small>
+                                La contraseña debe contener al menos seis caracteres, incluyendo un dígito, una letra mayúscula y una minúscula
+                            </small>
+                            
+                        </div>
+                        
+                    </form>
+                                
+                </article>
+                
+            </section>
+            
+            <section>
+                <h2>Comprar productos</h2>
+                
+                <article>
+                    
+                    <table id = "tablaProductos">
+                        <form>
+                        
+                            <tr>
+                                <td> Producto </td>
+                                <td> Descripción </td>
+                                <td> Precio </td>
+                                <td> Existencia </td>
+                                <td> Cantidad </td>
+                                <td> Subtotal </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src = "jersey.jpeg" style="width: 190px">
+                                </td>
+
+                                <td>
+                                    Jersey del equipo New England Patriots
+                                </td>
+                                <td>
+                                    $1,350.00
+                                </td>
+                                <td>
+                                    <div id ="existenciaJersey">10</div>   
+                                </td>
+                                <td>
+                                    <select class= "cantidad" onchange="calcularSubTotal(0);">
+                                        </select>
+                                </td>
+                                <td>
+                                    <div class = "subTotal">$0.00</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src = "helmet.jpeg" style="width: 190px">
+                                </td>
+                                <td>
+                                    Casco del equipo New England Patriots
+                                </td>
+                                <td>
+                                    $2,550.00
+                                </td>
+                                <td>
+                                    4    
+                                </td>
+                                <td>
+                                    <select class = "cantidad" onchange="calcularSubTotal(1);">
+                                        </select>
+                                </td>
+                                <td>
+                                    <div class = "subTotal">$0.00</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src = "ball.jpg" style="width: 190px">
+                                </td>
+                                <td>
+                                    Balón oficial de Fútbol Americano
+                                    <br>
+                                    En la compra de 5 o más balones obtén <br> $1,000.00 pesos de descuento
+                                </td>
+                                <td>
+                                    $750.00
+                                </td>
+                                <td>
+                                    20    
+                                </td>
+                                <td>
+                                    <select class = "cantidad" onchange="calcularSubTotal(2);">
+                                        </select>
+                                </td>
+                                <td>
+                                    <div class = "subTotal">$0.00</div>
+                                    <p id = "descuento">-</p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    SubTotal
+                                </td>
+                                <td>
+                                    <div id = "subTotal">$0.00</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    IVA
+                                </td>
+                                <td>
+                                    <div id = "iva">$0.00</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    Total
+                                </td>
+                                <td>
+                                    <div id = "total">$0.00</div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Pagar" onclick="confirmarPago();">
+                                </td>
+                            </tr>
+                            
+
+                        </form>
+                    
+                    </table>
+                
+                </article>
+            
+            </section>
+            
+            <section>
+                
+                <h2>Problema de mi interés</h2>
+                
+                <article>
+                    
+                    <h3>Calcular la hipotenusa de un triángulo rectángulo</h3>
+                    
+                    <form id = "hipotenusa" name ="hipo">
+                        <input type="number" placeholder="Cateto Adyacente" name="catAd" required>
+                        <input type="number" placeholder="Cateto Opuesto" name="catOp" required>
+                        <input type="text" placeholder="unidades" name="unidad">
+                        
+                        <input type="submit" value="Calcular">
+                    </form>
+                    
+                    <p id = "resultado"></p>
+                
+                </article>
+            </section>
+            
+            <section>
+                
+               <h2> Preguntas a responder </h2>
+                
+                <article>
+                    
+                    <h3 id ="1">
+                        ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+                    </h3>
+                    
+                    <p>
+                        Para el usuario es más rápido, y una mejor experiencia de usuario para él.
+                    </p>
+                    
+                    <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+                    <p>
+                        Al desactivar JavaScript
+                    </p>
+                    
+                    <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+                    
+                    <p>
+                        Nos podemos ahorrar tiempo de espera para una respuesta de http
+                    </p>
+
+                </article>
+                
+            </section>
+            
+            <section>
+                
+                <h2>Referencias</h2>
+                
+                <strong> <a href="#1">[1]</a> </strong>
+                "URL." Internet:
+                <a href=https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos>
+                    https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos
+				</a>
+				, 22/03/2005 [Enero 25, 2018]. <br>
+                
+            </section>
+            
+        </main> 
+        
+    </div>
+
+    <script type = "text/javascript" src = "JS_06.js"></script>
+    
+</body>
+
+</html>
