@@ -32,7 +32,7 @@ li{
 }
 
 a:link{
-    color: wheat;
+    color: darkblue;
 }
 
 a:visited{
@@ -77,5 +77,14 @@ table, th, td{
 .tablaProductos{
     
     margin-left: 50%;
+}
+
+#div1, #div2 {
+    
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
 }
 

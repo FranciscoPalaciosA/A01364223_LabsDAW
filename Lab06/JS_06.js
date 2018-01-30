@@ -56,7 +56,6 @@ function hidePopup(){
     document.getElementById("popup").style.display = "none";
 }
 
-
 function crearOpt(clase,max,index){
     
     var select, i, option;
@@ -171,26 +170,37 @@ document.getElementById("hipotenusa").onsubmit = function() {
     document.getElementById("resultado").innerHTML = result;
 }
 
-crearOpt("cantidad",10,0);
-crearOpt("cantidad",4,1);
-crearOpt("cantidad",20,2);
-
 function changeColor()
 {
     document.getElementById("header").style.color = "red";
     
 }
+
 document.getElementById("header").addEventListener("mouseover", changeColor);
 
 function openWin() {
     var myWindow = window.open("", "myWindow", "width=200, height=100");
-    myWindow.document.write("<p>This is 'myWindow'</p>");
+    myWindow.document.write("<p>Esta ventana se cerrará sola</p>");
     setTimeout(function(){ myWindow.close() }, 3000);
 }
 
+function allowDrop(ev) {
+    ev.preventDefault();
+}
 
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
 
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
 
+crearOpt("cantidad",10,0);
+crearOpt("cantidad",4,1);
+crearOpt("cantidad",20,2);
 
 
 

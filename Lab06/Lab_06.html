@@ -256,27 +256,50 @@
             
             <section>
                 
+                <h2>Mover imagen (Drag & Drop)</h2>
+                
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                    <img src="ball.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="140" height="140">
+                    
+                </div>
+            
+                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>          
+            </section>
+
+            
+            <section>
+                
                <h2> Preguntas a responder </h2>
                 
                 <article>
                     
                     <h3 id ="1">
-                        ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+                        ¿Cuáles son las diferencias entre los posibles valores de la propiedad position?
                     </h3>
                     
-                    <p>
-                        Para el usuario es más rápido, y una mejor experiencia de usuario para él.
-                    </p>
+                    <ul>
+                        <li>Static: Un elemento con este valor de posición está posicionado con el flujo normal de la página.</li>
+                        <li>Relative: Esta posición, como su nombre lo dice, hace que el elemento se fije relativo a su posición normal.</li>
+                        <li>Fixed: Con este valor el elemento se queda fija en un ligar sin importar que la página sea desplazada.</li>
+                        <li>Absolute: Este valor de posición deja al elemento posicionado relativo a su elemento padre.</li>
+                        <li>Sticky: Este valor sirve para hacer un elemento cambiar entre fixed y relative pues se queda fijo después de haber desplazado la página.</li>
+                    </ul>
                     
-                    <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
-                    <p>
-                        Al desactivar JavaScript
-                    </p>
+                    <h3>¿Cuáles son los valores estándar para la propiedad visibility?</h3>
                     
-                    <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+                    <ul>
+                        <li>Visible: El elemento está visible.</li>
+                        <li>Hidden: El elemento está escondido.</li>
+                        <li>Collapse: Sólo funciona con tablas, y quita una columna o fila pero no afecta el layout.</li>
+                        <li>Initial: Pone el valor default.</li>
+                        <li>Inherit: Hereda el valor de su elemento padre. </li>
+                    </ul>
+                    
+                    <h3>¿Qué es el zIndex y para qué sirve?</h3>
                     
                     <p>
-                        Nos podemos ahorrar tiempo de espera para una respuesta de http
+                        Esta propiedad te permite poner capas en tu html. Le da profundidad y te permite mover elementos atrás de otros o enfrente de otros. 
                     </p>
 
                 </article>
@@ -289,10 +312,10 @@
                 
                 <strong> <a href="#1">[1]</a> </strong>
                 "URL." Internet:
-                <a href=https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos>
-                    https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos
+                <a href=https://www.w3schools.com/cssref>
+                    https://www.w3schools.com/cssref
 				</a>
-				, 22/03/2005 [Enero 25, 2018]. <br>
+				, [Enero 29, 2018]. <br>
                 
             </section>
             
