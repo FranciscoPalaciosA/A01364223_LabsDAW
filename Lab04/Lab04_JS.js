@@ -18,6 +18,7 @@ function leerArreglo()
 }
 
 function hacerTabla(filas) {
+    
     var tabla = document.getElementById("Tabla");
     var i, cuadrado, cubo;
     
