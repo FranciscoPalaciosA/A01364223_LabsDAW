@@ -245,14 +245,14 @@
                         ¿Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?
                     </h3>
                     <p>
-                        
+                        Es necesario preparar la base de datos, el registro del usuario, el gestor de despliegue así como el servidor Web reomot. 
                     </p>
                     
                     <h3 id ="1">
                         ¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.
                     </h3>
                     <p>
-                        
+                        Lo que se ejecuta es el archivo php, el cual incluye el HTML, o sea que el HTML no está ligado con el php. 
                     </p>
                     
                 </article>
@@ -261,11 +261,11 @@
             <section>
                 <h2>Referencias</h2>
                 <strong> <a href="#1">[1]</a> </strong>
-                Juan Rodríguez. "URL." Internet:
-                <a href="https://www.gestiopolis.com/diferencias-java-javascript/">
-                    https://www.gestiopolis.com/diferencias-java-javascript/
+                phpnet. "PHP Include" Internet:
+                <a href="http://php.net/manual/es/function.include.php">
+                    http://php.net/manual/es/function.include.php
 				</a>
-				, 17/03/2005 [Enero 22, 2018]. <br>
+				,[Febrero 9, 2018]. <br>
                 
             </section>
             
