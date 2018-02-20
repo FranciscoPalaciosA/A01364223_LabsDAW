@@ -1,5 +1,5 @@
 BULK INSERT Proyectos
-   FROM 'e:\wwwroot\rcortese\proyectos.csv'
+   FROM 'e:\wwwroot\a1364423\proyectos.csv'
    WITH
       (
          CODEPAGE = 'ACP',

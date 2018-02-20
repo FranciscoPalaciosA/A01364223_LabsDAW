@@ -1,7 +1,7 @@
 SET DATEFORMAT dmy
 
 BULK INSERT Entregan
-   FROM 'e:\wwwroot\rcortese\entregan.csv'
+   FROM 'e:\wwwroot\a1364423\entregan.csv'
    WITH
       (
          CODEPAGE = 'ACP',

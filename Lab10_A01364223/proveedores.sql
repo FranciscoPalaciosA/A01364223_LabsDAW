@@ -1,5 +1,5 @@
 BULK INSERT Proveedores
-   FROM 'e:\wwwroot\rcortese\proveedores.csv'
+   FROM 'e:\wwwroot\a1364423\proveedores.csv'
    WITH
       (
          CODEPAGE = 'ACP',
