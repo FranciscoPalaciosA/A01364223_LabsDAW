@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red191\green100\blue38;
+\red32\green32\blue32;\red153\green168\blue186;\red133\green96\blue154;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\c87059;\cssrgb\c100000\c100000\c100000;\csgenericrgb\c74902\c39216\c14902;
+\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c52157\c37647\c60392;\cssrgb\c0\c0\c0\c87059;}
+\margl1440\margr1440\vieww12560\viewh8380\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Laboratorio 12 \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. \'bfCu\'e1l es? \'bfA qu\'e9 se debe?\'a0\
+S\'ed, hay una duplicaci\'f3n de las claves en la tabla, ya exist\'eda una clave 1000\
+Se debi\'f3 a que se hizo un insert con una clave que ya exist\'eda. \
+\
+\pard\pardeftab720\sl340\partightenfactor0
+\cf2 \cb1 \
+\'bfQu\'e9 ocurri\'f3?\cb3 \'a0\
+Al haber definido la tabla materiales y su primar y key, ya no es posible hacer un insert con una llave primaria igual a una ya existente en la tabla, por lo tanto te arroja un error de violaci\'f3n de llave primaria. \
+\cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf2 \cb3 Verifica si la tabla de materiales tiene definido alg\'fan constraint (restricci\'f3n)\'a0\
+S\'ed, tiene un constraint tipo PRIMARY KEY, con nombre llaveMateriales\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+\cf2 \cb1 \'bfQu\'e9 informaci\'f3n muestra esta consulta?\cb3 \'a0\
+Te muestra el tipo de constraint, el nombre, delete action, update action, status. etc\'85 \
+\
+\cb1 \'bfQu\'e9 sentencias utilizaste para definir las llaves primarias?\cb3 \'a0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 ALTER TABLE 
+\f2\b0 \cf6 NombreTabla 
+\f1\b \cf4 add constraint 
+\f2\b0 \cf6 NombreLlave 
+\f1\b \cf4 PRIMARY KEY 
+\f2\b0 \cf6 (\cf7 Columna\cf6 )\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\f0\fs30 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\
+\'bfQu\'e9 sentencias utilizaste para definir este constrait?\cb3 \'a0\
+Es la misma sentencia, pero debes separar con comas las columnas que forman la llave primaria \
+\
+\cb1 \'bfQu\'e9 particularidad observas en los valores para clave, rfc y numero?\'a0\
+Son valores inconsistentes, pues el 0 y xxx no son valores parecidos a los otros registros. \
+\
+\'bfC\'f3mo responde el sistema a la inserci\'f3n de este registro?\'a0\cb3 \
+El sistema no lo ve c\'f3mo error, pues son valores v\'e1lidos pero pueden crear inconsistencias en la tabla.\
+\
+\'bfQu\'e9 significa el mensaje que emite el sistema?\'a0\
+Se hizo una asignaci\'f3n de llave for\'e1nea a la tabla de entregan en clave desde materiales, eso quiere decir que ahora para poder dar de alta un registro en Entregan, es necesario que el valor en la columna clave sea una clave existente en la tabla materiales. \cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf2 \cb3 \
+\'bfQu\'e9 significan las columnas de esas consultas?\
+Al hacer \cb1 sp_helpconstraint tableName\cb3 \'a0te da informaci\'f3n sobre esa tabla y los constraints que tiene relacionado, en el caso de la tabla entregan, aparecen 4 constraints, uno de llave primaria y tres de llave for\'e1nea, cada uno de estos constraints viene con su nombre, con su tipo y con su llave de constraint.\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+\cf8 \cb1 \outl0\strokewidth0 \strokec8 \'bfQu\'e9 uso se le est\'e1 dando a GETDATE()?\cb3 \'a0\
+GETDATE() es una funci\'f3n que agarra la hora y fecha actual del servidor. Lo estamos usando en este caso para subir el registro con la hora actual de creaci\'f3n. \
+\
+\cb1 \'bfTiene sentido el valor del campo de cantidad?\cb3 \'a0\
+No tiene sentido pues estamos diciendo que la cantidad entregada son 0, y si hubo 0 entregado pues no hubo entrega.\
+\
+\cb1 \'bfC\'f3mo responde el sistema?\cb3 \'a0\
+No te permite hacer la inserci\'f3n del registro por el constraint que acabamos de poner.\
+\cb1 \
+\'bfQu\'e9 significa el mensaje?\'a0\cf2 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf2 Despu\'e9s de introducir una cantidad menor o igual a cero, el sistema me regresa un error diciendo que existe una restricci\'f3n (constraint) que no me permite hacer eso, que la revise y cambie mis valores. \
+\
+La integridad referencial es esa integridad que permite que los registros agregados a tablas con llaves for\'e1neas sean v\'e1lidos siempre y cuando esa llave s\'ed exista la tabla de donde se obtiene esa llave for\'e1nea.\
+}
