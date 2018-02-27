@@ -54,41 +54,37 @@
         <article>
                     
             <h3 id ="1">
-                ¿Por qué es una buena práctica separar el controlador de la vista?.
+                ¿Por qué es importante hacer un session_unset() y luego un session_destroy()?
             </h3>
                     
             <p>
-                Porque se hace más segura la página ante varios tipos de ataques, porque el php y el script no son accesibles para los usuarios.
+                Es buena práctica primero limpiar todas las variables de la sesión antes de eliminarla. 
             </p>
             
             <h3 id ="1">
-                Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?
+                ¿Cuál es la diferencia entre una variable de sesión y una cookie?
             </h3>
                     
             <p>
-                $_REQUEST: Contiene el contenido de los métodos get, post y cookie
-                $_GLOBALS: Da una referencia de todas las variables globales
-                $_COOKIES: Variables pasadas al script
-                $_FILES: Elementos subidos en el pasado por el metodo Post
-                $_SERVER: Información del servidor en el que se encuentra el script
-                $_ENV: Variables pasadas al script mediante el método del entorno
+                Las variables de session guardan los datos en la memoria del servidor web,
+                Las cookies guardan la info en un archivo en el cliente y solo pueden conservar un tamaño limitado de informacion, en cambio la session puede conservar objetos complejos
             </p>
                  
-            <h3 id ="2">
-                Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.
+            <h3 id ="2">   
+                ¿Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?
             </h3>
                     
             <p>
-                password_hash: para encriptar contraseñas. 
-                error_reporting: para mostrar los errores en la fase de desarrollo. 
+                Simplemente es necesario agregar un 'timestamp' al final del nombre del archivo para que de esa forma todos los archivos subidos tengan un nombre distinto pues jamás se podrán subir dos archivos con el mismo 'timestamp'.
             </p>
                  
             <h3 id ="1">
-                ¿Qué es XSS y cómo se puede prevenir?
+                ¿Qué es CSRF y cómo puede prevenirse?
             </h3>
                     
             <p>
-                Es un cross-site scripting y se refiere a un tipo de ataque donde hacker inyectan codigo malicioso del lado del cliente en el output de la pagina. Las aplicaciones que no escapen de su output son vulnerables a este tipo de ataques. Puede ser prevenido mediante la implementacion de htmlspecialchars() ó htmlentities() en el output. [1]
+                Es un tipo de exploit malicioso de un sitio web en el que comandos no autorizados son transmitidos por un usuario en el cual el sitio web confía.
+                Puede prevenirse con diferentes métodos como: Doble-posted cookie (envío doble de cookie), Unique form nonce (formulario único para cada solicitud), Requerir credenciales de autentificación nuevamente, One time Passwords.
             </p>
                   
         </article>
@@ -101,8 +97,8 @@
                 
     <strong> <a href="#1">[1]</a> </strong>
         "URL." Internet:
-    <a href=https://medium.com/@jpmorris/how-to-prevent-xss-attacks-by-escaping-output-in-php-942204bf184>
-                    https://medium.com/@jpmorris/how-to-prevent-xss-attacks-by-escaping-output-in-php-942204bf184
-    </a>, 22/03/2005 [Febrero 20, 2018]. <br>
+    <a href=http://idesweb.es/proyecto/proyecto-prac09-php-cookies-sesiones>
+        http://idesweb.es/proyecto/proyecto-prac09-php-cookies-sesiones
+    </a>, 22/03/2005 [Febrero 26, 2018]. <br>
                 
 </section>
