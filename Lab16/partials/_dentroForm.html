@@ -1,13 +1,13 @@
 <br><br>
 
-<?php var_dump($foto); ?>
-<img src='uploads/' style = "float:left; width: 200px; height: 200px">
+<img src='<?php echo $_SESSION["foto"].".png";?>' style = "float:left; width: 200px; height: 200px"> 
 
 Bienvenido <?php echo $nombre . " " . $apellido;?> <br>
 Te recordamos que has ingresado el número telefónico: <?php echo $tel?>. Para cambiarlo, favor de llamar al 722 201 3985 <br>
 <br><br>
   <form action="create.php" method="POST" enctype="multipart/form-data">
       <div class="input-field col s12">
+          
           <?php if (isset($_SESSION["error_archivo"]) != ""): ?>
             <div class="card-panel">
               <span class="red-text text-darken-2"><?=$_SESSION["error_archivo"] ?></span>
@@ -31,7 +31,12 @@ Te recordamos que has ingresado el número telefónico: <?php echo $tel?>. Para 
 
 <br><br><br>
 
-<?php getPlayers(); ?>
+<?php echo getPlayers(); ?>
+<br><br>
+<form action="agregar.php" method="POST")>
+    <input class="btn waves-effect waves-light" type="submit" value="Agregar Jugador">
+    <?php $_SESSION["textoBoton"] = "Agregar"; ?>
+</form>
 
 <h3> Ve los jugadores con más yardas</h3> <h4>Introduce la cantidad mínima de yardas: </h4>
 <form action="tablas.php" method="POST")>
@@ -49,5 +54,5 @@ if(isset($_POST["yardas"]))
 ?>
 
 <?php if(isset($_SESSION["nombre"])): ?>
-                <a class="btn waves-effect waves-light" href="logout.php" style = "float: right">Salir</a>
+    <a class="btn waves-effect waves-light" href="logout.php" style = "float: right">Salir</a>
 <?php endif; ?>

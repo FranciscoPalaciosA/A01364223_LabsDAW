@@ -1,0 +1,27 @@
+<br><br>
+
+  <div class="row">
+    <form class="col s12" action="agregarJugador.php" method="POST">
+      <div class="row">
+        <div class="input-field col s3">
+          <input id="nombreJug" name="nombreJug" type="text" class="validate" required>
+          <label for="nombreJug" style = "color: white">Nombre del jugador</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="equipo" name="equipo" type="text" class="validate" required>
+          <label for="equipo" style = "color: white">Equipo</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="posicion" name="posicion" type="text" class="validate" required>
+          <label for="posicion" style = "color: white">Posición</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="yardas" name="yardas" type="number" class="validate" required>
+          <label for="yardas" style = "color: white">Yardas</label>
+        </div>          
+      </div>
+    <div class="input-field col s6">
+        <input class="btn waves-effect waves-light" type="submit" value="<?=$_SESSION['textoBoton']?>">
+    </div>
+    </form>
+  </div>

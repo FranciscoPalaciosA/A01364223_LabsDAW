@@ -1,6 +1,5 @@
 <?php
 
-$foto = "";
 
 function connectDb()
 {
@@ -40,7 +39,7 @@ function login($user, $password)
             // it releases the associated results
             while($fila = mysqli_fetch_array($results, MYSQLI_BOTH))
             {
-                $foto = $fila['fotoperfil'];
+                $_SESSION["foto"] = "uploads/" . $fila['fotoperfil'];
             }
             //var_dump($foto);
             mysqli_free_result($results);
@@ -51,11 +50,6 @@ function login($user, $password)
         return false;
     } 
     return false;
-}
-
-function getProfilePicture()
-{
-    
 }
 
 function getPlayers()
@@ -88,6 +82,8 @@ function getPlayers()
                          <td> '.$fila["equipo"].' </td>
                          <td> '.$fila["posicion"].' </td>
                          <td> '.$fila["yardas"].' </td>
+                         <td> <a href="editar.php?id='.$fila["id"].'&modo=editar">Editar</a> </td>
+                         <td> <a href="editar.php?id='.$fila["id"].'&modo=borrar">Borrar</a> </td>
                          </tr>';
         }
       
@@ -95,13 +91,11 @@ function getPlayers()
                         </table>';
      
         disconnectDb($mysql);
-    
-        echo $string_res;
         
-        return true;
+        return $string_res;
     }
 
-    return true; 
+    return $string_res; 
 }
 
 function getHighYardPlayers($yards)
@@ -145,6 +139,88 @@ function getHighYardPlayers($yards)
     }
     
     return "";
+}
+
+function createJugador($nombreJug, $equipo, $posicion, $yardas)
+{
+    $mysql = connectDb();
+    
+     if ($mysql != NULL) {
+            
+         // insert command specification 
+         $query='INSERT INTO Jugadores (nombre, equipo, posicion, yardas) VALUES (?,?,?,?) ';
+         // Preparing the statement 
+         if (!($statement = $mysql->prepare($query))) {
+             die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+         }
+         // Binding statement params 
+         if (!$statement->bind_param("sssd", $nombreJug, $equipo, $posicion, $yardas)) {
+             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+         }
+         // Executing the statement
+         if (!$statement->execute()) {
+             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+         }  
+         
+         //mysqli_free_result($results);
+         disconnectDb($mysql);
+         return true;
+        } 
+    return false;
+}
+
+function updateJugador($nombreJug, $equipo, $posicion, $yardas)
+{
+    
+    $mysql = connectDb();
+    
+     if ($mysql != NULL) 
+     {
+             
+         $query = 'UPDATE Jugadores SET nombre="'.$nombreJug.'", equipo="'.$equipo.'", posicion="'.$posicion.'", yardas="'.$yardas.'" WHERE id ="'.$_SESSION["idUpdate"].'"';
+             // Preparing the statement 
+             
+         if (!($statement = $mysql->prepare($query))) {
+             die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+         }
+        // Binding statement params 
+        // if (!$statement->bind_param("sssd", $nombreJug, $equipo, $posicion, $yardas)) {
+        //     die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        // }
+        // Executing the statement
+         if (!$statement->execute()) {
+             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+         }      
+             
+             //mysqli_free_result($results);
+         disconnectDb($mysql);
+         return true;
+     } 
+    return false;
+}
+
+function deleteJugador($id)
+{
+    $mysql = connectDB();
+    
+    if($mysql != NULL)
+    {
+        $query = 'DELETE FROM Jugadores WHERE id = "'.$id.'"';
+        
+        if (!($statement = $mysql->prepare($query))) {
+             die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+        }
+        
+        if (!$statement->execute()) {
+             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+         }      
+
+         disconnectDb($mysql);
+        
+        return true;
+    }
+    
+    return false;
 }
 
 ?>
