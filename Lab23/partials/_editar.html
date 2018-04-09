@@ -1,0 +1,21 @@
+<h1>Editar el estado de un Zombie</h1>
+
+<h2>Zombie: </h2>
+<br>
+<?php require_once("modelo.php"); echo getZombieModificar($_SESSION['id'], "nombre"); ?> 
+
+<h2>Estado actual</h2>
+<?php require_once("modelo.php"); echo getZombieModificar($_SESSION['id'], "estado"); ?> 
+
+<h2>Nuevo estado</h2>
+    <form action="cambiarEstado.php" method="POST">
+        <label for="estadoNuevo">Nuevo Estado</label>
+        <select name="estadoNuevo">
+          <option value="Infección">Infección</option>
+          <option value="Coma">Coma</option>
+          <option value="Transformación">Transformación</option>
+          <option value="Completamente Muerto">Completamente Muerto</option>
+        </select>
+      
+        <input type="submit" value="Registrar Zombie">
+    </form>

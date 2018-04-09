@@ -1,0 +1,55 @@
+<body>
+    <div>
+        <h1>Página PETZ</h1>
+    </div>
+    
+    <div> Inicia sesion con Google para recibir un saludo </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    
+    <div id = "saludo"></div>
+
+    <h2>Registrar Zombie</h2>
+    
+    <form action="registrar.php" method="POST">
+        <label for="nombre">Nombre de Zombie</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Zombie Apellido" required>
+    
+        <label for="estado">Estado</label>
+        <select name="estado">
+          <option value="" disabled selected>Estado</option>    
+          <option value="Infección">Infección</option>
+          <option value="Coma">Coma</option>
+          <option value="Transformación">Transformación</option>
+          <option value="Completamente Muerto">Completamente Muerto</option>
+        </select>
+      
+        <input type="submit" value="Registrar Zombie">
+    </form>
+    
+    <br><br><br>
+    
+    <h2>Editar Estado de Zombie</h2>
+    <?php require_once("modelo.php"); echo getZombies(); ?>
+    
+    <h2>Consultas</h2>
+    
+    1. <button onclick="cantidades();">Cantidades</button>
+    <br> 2. <button onclick="zombiesRegistrados();">Zombies Registrados</button>
+    
+    <br><br>
+        Seleccionar estado
+        
+        <label for="estadoConsulta">Estado</label>
+        <select name="estadoConsulta" id="estadoConsulta">
+          <option value="" disabled selected>Estado</option>    
+          <option value="Infección">Infección</option>
+          <option value="Coma">Coma</option>
+          <option value="Transformación">Transformación</option>
+          <option value="Completamente Muerto">Completamente Muerto</option>
+        </select>
+        
+        3. <button onclick="zombiesPorEstado();">Zombies por Estado</button>
+
+    <div id="consultas"></div>
+    
+    
